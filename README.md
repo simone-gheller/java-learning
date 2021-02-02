@@ -147,3 +147,6 @@ Questo documento vuole essere un punto di riferimento per il mio percorso di aut
 ######27/01/2021
 - Null values
 - Progress on Java intermediate on PluralSight
+######02/02/2021
+- Design pattern, how to avoid procedural design
+- Progress on Java intermediate on Pluralsight
