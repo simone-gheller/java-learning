@@ -93,6 +93,11 @@ Questo documento vuole essere un punto di riferimento per il mio percorso di aut
 - Si può considerare se esplicitamente controllare l' eccezione (NullPointerException) oppure sopprimerla e gestirla in altro modo, oppure magari sostituire con oggetti default tipo liste vuote. Best practise: fare overload di metodi che accettano certi parametri a null con una versione senza quel param.
 - Null Object Pattern: non è un pattern della GOF. essenzialmente può essere considerato come uno state o uno stretegy che implementa un comportamento NULLO. questo oggetto "nullo" deve essere usato come default per certi tipi di implementazioni (es. in una classe ho un attributo String name e un metodo toString che stampa una stringa complessa di cui name fa parte. se name è null ho un problema quindi del getter di name chiamo il null object).
 - Optional<T>: è un wrapper di T che O contiene un oggetto di tipo T oppure non contiene niente. Best practise usare come return type di metodi che controllo, NON usare come parametro. Si crea con un factory method di Optional e si lavora con .filter .map, si finisce con .ifPresent .orElse
+######Design
+- State: evita l'uso di booleani per fare check su certe condizioni pre behavior. KEY: separare dati da stato e usare callbacks con functional interfaces.
+- Value objects: oggetti immutabili da classe possibilmente final. (implementare correttamente equals). Rendono l'incapsulamento più facile ed evitano l'aliasing bug e l'hashcode map bug.
+- alising bug: una referenza di un oggetto viene condivisa in parti diverse del programma e provoca errori di behavior.
+- hashcode map bug: un oggetto viene inserito nella Map con l'hashcode calcolato al momento. se l'hashcode dipende dallo stato dell'oggetto, questo cambia a sua volta e se viene effettuata una ricerca l'indice nella Map non corrisponderà al nuovo hashcode.
 
 
 
